@@ -7,6 +7,7 @@ authors = ["Aditya21Hebbar <<>>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 bs4 = "^0.0.1"
+selenium = "^4.3.0"
 
 [tool.poetry.dev-dependencies]
 
