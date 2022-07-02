@@ -7,6 +7,9 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 import time
 
+url = 'https://food.grab.com/sg/en/restaurants'
+headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
+
 def get_driver():
   chrome_options = Options()
   chrome_options.add_argument('--no-sandbox')
@@ -15,9 +18,6 @@ def get_driver():
   driver = webdriver.Chrome(options=chrome_options)
   return driver 
   
-url = 'https://food.grab.com/sg/en/restaurants'
-headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
-
 
 def get_locs(driver):
   driver.get(url)
