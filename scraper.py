@@ -7,8 +7,11 @@ headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleW
 
 r = requests.get(url,headers = headers)
 soup = BeautifulSoup(r.content,'html.parser')
-script = soup.find_all('script')[0]
+#script = soup.find_all('script')[0]
 
 
 data = json.loads(soup.find('script', id='__NEXT_DATA__').text)
-print(data)
+# print(data['props']['initialReduxState']['pageRestaurantsV2']['entities']['restaurantList'])
+restaurant_list = data['props']['initialReduxState']['pageRestaurantsV2']['entities']['restaurantList']
+restaurants = list(restaurant_list.items())
+print(restaurants)
