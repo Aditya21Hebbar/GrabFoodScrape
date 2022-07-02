@@ -19,28 +19,6 @@ url = 'https://food.grab.com/sg/en/restaurants'
 headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
 
 
-# r = requests.get(url,headers = headers)
-# soup = BeautifulSoup(r.content,'html.parser')
-
-# data = json.loads(soup.find('script', id='__NEXT_DATA__').text)
-
-# restaurant_list = data['props']['initialReduxState']['pageRestaurantsV2']['entities']['restaurantList']
-
-# position_data=[]
-# for restaurant in restaurant_list:
-#     restaurant_data = restaurant_list[restaurant]
-#     latitude  = restaurant_data['latitude']
-#     longitude = restaurant_data['longitude']
-#     geo_data = {
-#         'latitude': latitude,
-#         'longitude': longitude
-#     }
-#     position_data.append(geo_data)
-# position_data
-
-# result = pd.DataFrame(position_data)
-# result
-
 def get_locs(driver):
   driver.get(url)
   while True:
@@ -74,7 +52,6 @@ if __name__ == "__main__":
   #     print ("Complete")
   #     time.sleep(10)
   #     driver.quit()
-  # content = driver.find_element(By.ID,'__NEXT_DATA__')
   r= driver.page_source
   soup = BeautifulSoup(r,'html.parser')
   data = json.loads(soup.find('script', id='__NEXT_DATA__').text)
