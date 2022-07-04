@@ -79,4 +79,6 @@ if __name__ == "__main__":
     position_data.append(geo_data)
   print(position_data)
   
- 
+ #to access xhr data with scraping api
+#scrape with passing capctha
+#finding data with script wont be neccessary may be
